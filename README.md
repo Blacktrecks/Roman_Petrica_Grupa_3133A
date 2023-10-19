@@ -1,5 +1,5 @@
 # Roman_Petrica_Grupa_3133A
-# Tema Laborator 2 
+# Tema Laborator 2  
 
 ##1. Viewport
 Un viewport în OpenGL reprezintă o portiune a ferestrei în care se va realiza randarea unui continut. De obicei este definit de coordonatele sale în fereastră si prezinta zona in care se vor desena diferitele obiecte.
