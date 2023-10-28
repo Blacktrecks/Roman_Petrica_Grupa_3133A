@@ -38,7 +38,7 @@ Metoda `CreatePerspectiveFieldOfView()` creaza o matrice de proiecție perspecti
 Matrix4 perspective = CreatePerspectiveFieldOfView(45.0f, aspectRatio, 0.1f, 100.0f);
 ```
 
-#Tema Laboratoe 3
+#3 Tema Laboratoe 3
 
 ## 1. Ordinea de desenare a vertexurilor
 ```
@@ -62,3 +62,30 @@ Matrix4 perspective = CreatePerspectiveFieldOfView(45.0f, aspectRatio, 0.1f, 100
     GL.End();
 ```
 Ordinea de desenare a vertex-urilor este anti-orar. Putem pune in aplicație un Begin la început când se dorește desenarea liniilor si end la final, deoarece se lucrează cu același tip de primitive.
+
+## 2. Amti-aliasing
+`Anti-aliasing` utilizează diverse tehnici pentru a scăpa de marginile zimțate de pe ecran, care apar ca urmare a desenării unei drepte oblice pe ecran atunci când  poziționarea naturală a pixelilor pe ecran este cea  perpendiculară.
+Un exemplu de anti-aliasing este: `amplificam cu un factor de scalare imaginea` apoi o randăm la dimensiunea inițială  pentru a pasta o claritate cat mai bună.
+
+## 3. GL.LineWidth(float) & GL.PointSize(float)
+Prin folosirea comenzii `GL.LineWidth(float)` vom putea mari diametrul liniei(ingrosare), iar prin folosirea `GL.PointSize(float)` si nu functioneaaza inafara zonei GL.Begin.
+
+## 4. 1. LineLoop
+Efectul  acestei directive `LineLoop` creeaza legatura intre liniile desenate pe ecran in care ultimul vertex desenat este conectat la primul vertex.
+
+## 4. 2. LineStrip
+Prin folosirea `LineStrip`, putem crea legaturi intre segmentele desenaate pe ecran, iar la fiecare 2 segemente se va specifica un vertex de legatura.
+
+## 4. 3. TriangleFan
+Se deseneaza triunghiuri multiple precum `TriangleStrip`, cu mica exceptie ca sunt au o pozitie circulara.
+
+## 4. 4. TriangleStrip
+Deseneaza triunghiuri conectate pe ecran, fiecare vertex este specificat dupa ce s-au dat 3 vertex-uri pentru crearea unui triunghi.
+
+## 6. Avantajul si importanta utilizarii culorii diferite in desenarea obiectelor 3D
+Utilizarea culorilor diferite sau a gradientului scot in evidenta mai bine formele obiectelor si efectul 3D. Avantajul e dat de efectul de pronuntare 3D al obiectelor ce face diferenta in grafica.
+
+## 7. Gradientul de Culoare
+Reprezinta o selectie de culori care evidentiaza trecerea de la o culoare la alta. Folosind OpenGL putem realiza acest lucru prin specificarea culorii vertex-urilor ce creaza o anumita figura si astfel se va realiza gradient de la un vertex la altul.
+
+## 8. Canalul de Transparenta
