@@ -38,7 +38,7 @@ Metoda `CreatePerspectiveFieldOfView()` creaza o matrice de proiecție perspecti
 Matrix4 perspective = CreatePerspectiveFieldOfView(45.0f, aspectRatio, 0.1f, 100.0f);
 ```
 
-#3 Tema Laboratoe 3
+## Tema Laboratoe 3
 
 ## 1. Ordinea de desenare a vertexurilor
 ```
