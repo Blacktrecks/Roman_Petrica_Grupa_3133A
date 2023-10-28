@@ -63,7 +63,7 @@ Matrix4 perspective = CreatePerspectiveFieldOfView(45.0f, aspectRatio, 0.1f, 100
 ```
 Ordinea de desenare a vertex-urilor este anti-orar. Putem pune in aplicație un Begin la început când se dorește desenarea liniilor si end la final, deoarece se lucrează cu același tip de primitive.
 
-## 2. Amti-aliasing
+## 2. Anti-aliasing
 `Anti-aliasing` utilizează diverse tehnici pentru a scăpa de marginile zimțate de pe ecran, care apar ca urmare a desenării unei drepte oblice pe ecran atunci când  poziționarea naturală a pixelilor pe ecran este cea  perpendiculară.
 Un exemplu de anti-aliasing este: `amplificam cu un factor de scalare imaginea` apoi o randăm la dimensiunea inițială  pentru a pasta o claritate cat mai bună.
 
@@ -89,3 +89,7 @@ Utilizarea culorilor diferite sau a gradientului scot in evidenta mai bine forme
 Reprezinta o selectie de culori care evidentiaza trecerea de la o culoare la alta. Folosind OpenGL putem realiza acest lucru prin specificarea culorii vertex-urilor ce creaza o anumita figura si astfel se va realiza gradient de la un vertex la altul.
 
 ## 8. Canalul de Transparenta
+Reprezinta valoarea pe 32 de biti de la 0(complet transparent) la 255 (complet opac).
+
+## 10. Modul Strip
+Se va crea un efect specific de gradient pe acea dreapta, de la un vertex la un vertex invecinat.
