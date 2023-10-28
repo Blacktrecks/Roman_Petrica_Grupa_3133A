@@ -36,10 +36,12 @@ Metoda `CreatePerspectiveFieldOfView()` creaza o matrice de proiecție perspecti
 ### Exemplu de utilizare al acestora:
 ```c#
 Matrix4 perspective = CreatePerspectiveFieldOfView(45.0f, aspectRatio, 0.1f, 100.0f);
+```
 
 #Tema Laboratoe 3
 
 ## 1. Ordinea de desenare a vertexurilor
+```
   GL.Begin(PrimitiveType.Lines);
 
     // Axa X deseneasza (roșie)
@@ -58,4 +60,5 @@ Matrix4 perspective = CreatePerspectiveFieldOfView(45.0f, aspectRatio, 0.1f, 100
     GL.Vertex3(0.0f, 0.0f, 1.0f);
 
     GL.End();
+```
 Ordinea de desenare a vertex-urilor este anti-orar. Putem pune in aplicație un Begin la început când se dorește desenarea liniilor si end la final, deoarece se lucrează cu același tip de primitive.
