@@ -5,6 +5,7 @@
 //Import librarii specifice OpenTk
 using System;
 using System.Drawing; //import bibleoteca standard pentru lucrul cu imagini si culori
+using System.IO;
 using OpenTK; //import bibleoteca OpenTk pentru grafica 3D
 using OpenTK.Graphics; //subcomponenta pentru grafica
 using OpenTK.Graphics.OpenGL; //import functionalitati grafice OpenGL pentru OpenTk
@@ -32,6 +33,18 @@ namespace Roman_Petrica_Grupa_3133A
             VSync = VSyncMode.On;  //sincronizare ecran verticala
         }
 
+
+        //Daca nu exista un fisier date.txt il vom crea si initializa cu coordonatele unui triunghi
+        private void CreateAndSaveTriangleFile()
+        {
+            using (StreamWriter sw = new StreamWriter("date.txt"))
+            {
+                sw.WriteLine("0.0, 1.0, 0.0");
+                sw.WriteLine("-1.0, -1.0, 0.0");
+                sw.WriteLine("1.0, -1.0, 0.0");
+            }
+        }
+
         //1.Metoda Onload folosita pentru incarcarea initiala
         protected override void OnLoad(EventArgs e)
         {
@@ -40,6 +53,13 @@ namespace Roman_Petrica_Grupa_3133A
             //Seteaza culoarea de fundal a ferestrei
             GL.ClearColor(Color.Green);
             GL.Enable(EnableCap.DepthTest);
+
+            //conditie care verifica data fisierul date.txt exista
+
+            if (!File.Exists("date.txt"))
+            {
+                CreateAndSaveTriangleFile();
+            }
 
             string linie;
             char[] sep = { ',' }; //definire separator pentru citirea din fisier
