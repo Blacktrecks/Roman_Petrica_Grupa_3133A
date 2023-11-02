@@ -186,6 +186,8 @@ namespace Roman_Petrica_Grupa_3133A
             GL.MatrixMode(MatrixMode.Modelview); //seteaza ca fiind matrice de modelare
             GL.LoadMatrix(ref lookat); //incarca matricea de modelare in OpenGl
 
+            DrawAxes();
+
             angle_horizontal += rotation_speed_horizontal * (float)e.Time;
             GL.Rotate(angle_horizontal, 0.0f, 1.0f, 0.0f); //roteste obiectul pe orizontala
             angle_vertical += rotation_speed_vertical * (float)e.Time;
@@ -272,8 +274,103 @@ namespace Roman_Petrica_Grupa_3133A
         //Metoda pentru desenarea piramidei
         private void DrawPyramid()
         {
-            GL.Begin(PrimitiveType.Polygon); //incepe desenarea poligoanelor
 
+            //Desenare linii intre punctele specificate
+            GL.Begin(PrimitiveType.LineStrip);
+            GL.Color3(1.0, 0.0, 0.0); //culoare rosie
+            GL.Vertex3(0.0, 10, 0.0f); //deseneaza punct
+            GL.Color3(0.0, 0.0, 0.0);//culoare neagra
+            GL.Vertex3(0.0f, 0.0f, 0.0f);//desenare punct nou
+            GL.Color3(0.0, 1.0, 0.0);//culoare verde
+            GL.Vertex3(10, 10, 0.0f);//desenare alt punct
+            GL.Color3(0.0, 0.0, 1.0);//culoare albastra
+            GL.Vertex3(15, 0.0f, 0.0f);//desenare punct
+            GL.End();//termina desenarea liniilor
+
+            KeyboardState keyboard = Keyboard.GetState();
+            GL.Begin(PrimitiveType.Polygon); //incepe desenarea poligoanelor
+            if (keyboard[Key.Up])
+            {
+                if (ok == 255)
+                    ok = 1;
+                ok++;
+                GL.Color3(Color.FromArgb(ok, 0, 0));
+                Console.WriteLine(ok);
+            }
+            GL.Vertex3(vec[0], vec[1], vec[2]);
+
+            //modifica culoare in functie de tastele introduse
+            if (keyboard[Key.Down])
+            {
+                if (ok == 255)
+                    ok = 1;
+                ok++;
+                GL.Color3(Color.FromArgb(0, ok, 0));
+                Console.WriteLine(ok);
+            }
+
+            GL.Vertex3(vec[3], vec[4], vec[5]);
+
+            if (keyboard[Key.Left])
+            {
+                if (ok == 255)
+                    ok = 1;
+                ok++;
+                GL.Color3(Color.FromArgb(0, 0, ok));
+                Console.WriteLine(ok);
+            }
+            GL.Vertex3(vec[6], vec[7], vec[8]);
+
+            if (keyboard[Key.Right])
+            {
+                if (alpha == 255 || ok == 255)
+                    alpha = ok = 0;
+                alpha++;
+                ok++;
+                GL.Color3(Color.FromArgb(alpha, 0, 255, 0));
+                Console.WriteLine(alpha);
+            }
+            if (keyboard[Key.Up])
+            {
+                if (ok == 255)
+                    ok = 1;
+                ok++;
+                GL.Color3(Color.FromArgb(ok, 0, 0));
+                Console.WriteLine(ok);
+            }
+            GL.Vertex3(vec[0], vec[1], vec[2]);
+
+            //modifica culoare in functie de tastele introduse
+            if (keyboard[Key.Down])
+            {
+                if (ok == 255)
+                    ok = 1;
+                ok++;
+                GL.Color3(Color.FromArgb(0, ok, 0));
+                Console.WriteLine(ok);
+            }
+
+            GL.Vertex3(vec[3], vec[4], vec[5]);
+
+            if (keyboard[Key.Left])
+            {
+                if (ok == 255)
+                    ok = 1;
+                ok++;
+                GL.Color3(Color.FromArgb(0, 0, ok));
+                Console.WriteLine(ok);
+            }
+            GL.Vertex3(vec[6], vec[7], vec[8]);
+
+            if (keyboard[Key.Right])
+            {
+                if (alpha == 255 || ok == 255)
+                    alpha = ok = 0;
+                alpha++;
+                ok++;
+                GL.Color3(Color.FromArgb(alpha, 0, 255, 0));
+                Console.WriteLine(alpha);
+            }
             GL.Color3(Color.DarkBlue); //culoare albastru inchis
             GL.Vertex3(10.0f, 10.0f, 10.0f);//deseneaza varf piramida
             GL.Vertex3(-10.0f, -10.0f, 10.0f);//desenare alt varf
@@ -300,6 +397,31 @@ namespace Roman_Petrica_Grupa_3133A
             GL.Vertex3(-10.0f, -10.0f, 10.0f);//desenare imca un varf
 
             GL.End(); //terminare desenare poligoane
+        }
+        private void DrawAxes()
+        {
+            GL.Begin(PrimitiveType.Lines);
+            // X
+            GL.Color3(Color.Red);
+            GL.Vertex3(10, 10, 10);
+            GL.Vertex3(100, 10, 10);
+
+            // Y
+            GL.Color3(Color.Blue);
+            GL.Vertex3(10, 10, 10);
+            GL.Vertex3(10, 100, 10);
+
+            // Z
+            GL.Color3(Color.Black);
+            GL.Vertex3(10, 10, 10);
+            GL.Vertex3(10, 10, 100);
+
+
+
+            GL.LineWidth(20f);
+            GL.PointSize(20f);
+
+            GL.End();
         }
 
         //Metoda main care initializeaza si ruleaza fereastra OpenGl
