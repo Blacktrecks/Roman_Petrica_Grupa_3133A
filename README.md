@@ -95,7 +95,7 @@ Reprezinta valoarea pe 32 de biti de la 0(complet transparent) la 255 (complet o
 Se va crea un efect specific de gradient pe acea dreapta, de la un vertex la un vertex invecinat.
 
 
-## Tema Laborator 4
+## -Tema Laborator 4
 ## Raspunsuri la intrebari
 
 ## 1. Ce observati manipuland parametrii oferiti de OpenGL?
