@@ -93,3 +93,15 @@ Reprezinta valoarea pe 32 de biti de la 0(complet transparent) la 255 (complet o
 
 ## 10. Modul Strip
 Se va crea un efect specific de gradient pe acea dreapta, de la un vertex la un vertex invecinat.
+
+
+## Tema Laborator 4
+## Raspunsuri la intrebari
+
+## 1. Ce observati manipuland parametrii oferiti de OpenGL?
+Alegand manipularea acestor parametrii, se pot produce ajustari ale modului in care este desenat si afisat cubul 3D in fereastra de vizualiuzare.
+
+## 2. Ce efect va aparea la utilizarea canalului de transparenta?
+Va permite controlul transparentei obiectelor desenate. Daca canalul de transparenta este utilizat, culorile pot avea o componenta care indica gradientul de opacitate pentru fiecare pixel.
+
+
