@@ -11,7 +11,7 @@ using OpenTK.Graphics; //subcomponenta pentru grafica
 using OpenTK.Graphics.OpenGL; //import functionalitati grafice OpenGL pentru OpenTk
 using OpenTK.Input; //functionalitati de intrare pentru tastatura si mouse
 
-namespace Roman_Petrica_Grupa_3133A
+namespace Roman_Petrica_Grupa_3133A_piramida
 {
     //declararea clasei principale SimpleWindow3D care mosteneste din GameWindow
     class SimpleWindow3D : GameWindow  //Initiaalizare fereastra
