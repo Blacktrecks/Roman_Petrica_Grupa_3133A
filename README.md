@@ -105,3 +105,26 @@ Alegand manipularea acestor parametrii, se pot produce ajustari ale modului in c
 Va permite controlul transparentei obiectelor desenate. Daca canalul de transparenta este utilizat, culorile pot avea o componenta care indica gradientul de opacitate pentru fiecare pixel.
 
 
+## -Tema Laborator 9
+## Raspunsuri intrebari
+
+## 1. Descrieți diferențele dintre iluminarea așa cum funcționează în lumea
+reală și modelul de iluminare utilizat de OpenGL.
+Iluminarea in lumea reala este un fenomen mai complex influentat de multiple surse de lumina, reflexii sau umbre. Modelul de iluminare in OpenGL e mai simplificat pentru a simula efectele iluminarii intr-un mediu virtual. Modelul virtual poate include componente precum iluminarea ambientala,difuza si speculara.
+
+## 2. Câte surse de lumină sunt suportate în implementarea curentă a
+OpenGL cu ajutorul framework-ului OpenTK?
+Sursele de lumina in OprnGL pot varia in functie de implementare si capacitatile hardware-ului folosit. OpenTK fiind framework pentru OpenGL poate suporta un numar variabil in functie de versiunea utilizata si de hardware.
+
+## 3. Definiți iluminarea de material și specificați unde și când este
+utilizată aceasta.
+Iluminarea de material face referire la modul in care materialul curent interactioneaza cu lumina si este compusa din 3 componente principale:
+-Iluminarea ambientala: iluminare constanta aplicata uniform obiectelor independent de directia sursei de lumina.
+-Iluminarea difuza: rezulta din interactiunea luminii incidenta si suprafata pentru determinarea zonei iluminate si a celei umbrite pe obiect.
+-Iluminarea speculara: reflexiile de lumina de pe suprafata materialului evidentiind zonele stralucitoare si directia sursei de lumina.
+
+
+## 4.  Care este efectul asupra diverselor obiecte la activarea unei surse de
+lumină secundare (per pct. 3), comparativ cu utilizarea unei singure
+surse de lumină?
+Prin activarea unei surse de lumina secundare poate adauga realism si detalii suplimentare la scene;e 3D.Efectele pot include umbre pronuntate,zone iluminate diferit. Mai multe surse de lumina vor crea scene mai realiste, intrucat obiectele interactioneaza doferit la fiecare sursa de lumina.
